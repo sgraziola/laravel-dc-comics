@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link {{Route::currentroutename() === 'comics' ? 'active' : '' }}" href="{{route('comics')}}">Comics</a>
+                        <a class="nav-link {{Route::currentRouteName() === 'comics.index' ? 'active' : '' }}" href="{{route('comics.index')}}">Admin Comics</a>
                     </li>
                 </ul>
             </div>
