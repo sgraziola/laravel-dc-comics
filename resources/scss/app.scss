@@ -1,1 +1,11 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+.comic{
+
+    img {
+        width: 200px;
+        object-fit: cover;
+        object-position: top;
+        aspect-ratio: 1 / 1;
+    }
+}
