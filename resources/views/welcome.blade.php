@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="container py-5">
-    <h1 class="mb-4">COMICS</h1>
+    <h1 class="mb-5 text-center">WELCOME TO DC COMIC</h1>
+    <h2 class="mb-3">CURRENT COMICS IN STORE</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-5">
 
         @forelse($comics as $comic)
