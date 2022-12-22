@@ -95,7 +95,7 @@ class ComicController extends Controller
         //dd($request->all(), $comic);
         $comic->update($data);
 
-        return to_route('comics.index');
+        return to_route('comics.index')->with('message', "$comic->title update successfully");
     }
 
     /**
