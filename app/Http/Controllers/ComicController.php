@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
 use App\Http\Requests\UpdateComicRequest;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -37,7 +38,7 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-        $comic = new Comic();
+        /* $comic = new Comic();
         $comic->title = $request['title'];
         $comic->description = $request['description'];
         $comic->thumb = $request['thumb'];
@@ -45,10 +46,13 @@ class ComicController extends Controller
         $comic->series = $request['series'];
         $comic->sale_date = $request['sale_date'];
         $comic->type = $request['type'];
-        $comic->save();
+        $comic->save(); */
 
-        // redirect to a get route!?
-        return to_route('comics.index');
+        $val_data = $request->validated();
+        $comic = Comic::create($val_data);
+
+        // redirect to a get route
+        return to_route('comics.index')->with('message', "$comic->title added successfully");
     }
 
     /**
@@ -83,7 +87,7 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = [
+        /*  $data = [
             'title' => $request['title'],
             'description' => $request['description'],
             'thumb' => $request['thumb'],
@@ -91,9 +95,11 @@ class ComicController extends Controller
             'series' => $request['series'],
             'sale_date' => $request['sale_date'],
             'type' => $request['type'],
-        ];
+        ]; */
         //dd($request->all(), $comic);
-        $comic->update($data);
+        $val_data = $request->validated();
+
+        $comic->update($val_data);
 
         return to_route('comics.index')->with('message', "$comic->title update successfully");
     }
