@@ -12,37 +12,37 @@
 
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="titolo fumetto" aria-describedby="titleHlper" value="{{$comic->title}}">
+            <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="titolo fumetto" aria-describedby="titleHlper" value="{{$comic->title}}">
             <small id="titleHlper" class="text-muted">Add the comic title here</small>
         </div>
         <div class="mb-3">
             <label for="thumb" class="form-label">comic Image</label>
-            <input type="text" name="thumb" id="thumb" class="form-control" placeholder="immagine fumetto" aria-describedby="thumbHlper" value="{{$comic->thumb}}">
+            <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="immagine fumetto" aria-describedby="thumbHlper" value="{{$comic->thumb}}">
             <small id="thumbHlper" class="text-muted">Add the comic image here</small>
         </div>
 
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" name="description" id="description" rows="4">{{$comic->description}}</textarea>
+            <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="4">{{$comic->description}}</textarea>
         </div>
         <div class="mb-3">
             <label for="series" class="form-label">Series</label>
-            <input type="text" name="series" id="series" class="form-control" placeholder="serie" aria-describedby="seriesHlper" value="{{$comic->series}}">
+            <input type="text" name="series" id="series" class="form-control @error('series') is-invalid @enderror" placeholder="serie" aria-describedby="seriesHlper" value="{{$comic->series}}">
             <small id="seriesHlper" class="text-muted">Add the comic type here</small>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">prezzo</label>
-            <input type="text" name="price" id="price" class="form-control" placeholder="price" aria-describedby="priceHlper" value="{{$comic->price}}">
+            <input type="text" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="price" aria-describedby="priceHlper" value="{{$comic->price}}">
             <small id="priceHlper" class="text-muted">Add the comic prezzo here</small>
         </div>
         <div class="mb-3">
             <label for="type" class="form-label">Type</label>
-            <input type="text" name="type" id="type" class="form-control" placeholder="tipo di fumetto" aria-describedby="typeHlper" value="{{$comic->type}}">
+            <input type="text" name="type" id="type" class="form-control @error('type') is-invalid @enderror" placeholder="tipo di fumetto" aria-describedby="typeHlper" value="{{$comic->type}}">
             <small id="typeHlper" class="text-muted">Add the product type here</small>
         </div>
         <div class="mb-3">
             <label for="sale_date" class="form-label">comic sale date</label>
-            <input type="text" name="sale_date" id="sale_date" class="form-control" placeholder="sale date" aria-describedby="sale_dateHlper" value="{{$comic->sale_date}}">
+            <input type="text" name="sale_date" id="sale_date" class="form-control @error('sale_date') is-invalid @enderror" placeholder="sale date" aria-describedby="sale_dateHlper" value="{{$comic->sale_date}}">
             <small id="sale_dateHlper" class="text-muted">Add the comic sale date here</small>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
